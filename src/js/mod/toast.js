@@ -6,7 +6,7 @@
 
 require("less/toast.less");
 
-var $ = require('jquery')
+// var $ = require('jquery')
 
 function toast(message, time){
     //信息

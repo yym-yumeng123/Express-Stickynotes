@@ -53,6 +53,4 @@ var WaterFall = (function(){
     }
 })();
 
-// Waterfall.init($('#content'))
-
 module.exports = WaterFall

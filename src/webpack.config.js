@@ -22,5 +22,10 @@ module.exports = {
             mod: path.join(__dirname,"js/mod"),
             less: path.join(__dirname,"less")
         }
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery"
+        })
+    ]
 }

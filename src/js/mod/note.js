@@ -4,9 +4,9 @@
 
 //一个便利贴
 
-require('less/note.less')
+require('less/note.less');
 
-var Toast = require('./toast.js').Toast
+var Toast = require('./toast.js').Toast;
 var Event = require('mod/event.js');
 
 function Note(opts){
@@ -15,11 +15,6 @@ function Note(opts){
     this.setStyle();
     this.bindEvent();
 }
-
-/*
-* {id : 1 text :'value}
-* */
-
 Note.prototype = {
     colors: [
         ['#ea9b35','#efb04e'], // headColor, containerColor
