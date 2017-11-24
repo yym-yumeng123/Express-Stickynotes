@@ -1,50 +1,40 @@
 # Express-Stickynotes
 node express 搭建在线留言墙
 
-bin -- 一些可执行文件
-node_modules -- 一些可依赖的模块
-public -- 静态资源 源代码
-routes -- 一些路由
-views  -- 一些模板
-
-src -- 静态资源的源文件
-libs -- 放一些其他框架 库
-app -- 不同页面的入口
-
-
+**文件结构**
 
 ```
 ├── app.js
-├── bin
+├── bin  // 一些可执行文件
 │   └── www
 ├── package.json
-├── public
+├── public  // 静态资源 源代码
 │   ├── imgs
 │   ├── js
 │    ├── fonts
 │   ├── css
 │       └── style.css
-├── src
-│   ├── webpack.config.js
+├── src  // 静态资源的源文件
+│   ├── webpack.config.js  // webpack配置
 │   ├── imgs
 │   ├── js
-         ├── app
+         ├── app  // 不同页面的入口
             └── index.js
          ├── lib
-         └── mod   //模块组件
-             ├── toast.js  //提醒组件
+         └── mod   // 模块组件
+             ├── toast.js  // 提醒组件
              ├── note.less
              └── toast.less
 │   ├── less
 │       ├── index.less
          ├── note.less
          └── toast.less
-├── routes
+├── routes  // 路由
 │   ├── index.js
 │   └── users.js
-└── views
+└── views  // 模板引擎
     ├── error.ejs
     ├── index.ejs
-    └── layout.jade
+    └── 
 
 ```
