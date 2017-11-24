@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/yym-yumeng123/Express-Stickynotes/issues"
   },
-  "homepage": "https://github.com/yym-yumeng123/Express-Stickynotes#readme"
+  "homepage": "https://github.com/yym-yumeng123/Express-Stickynotes#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
