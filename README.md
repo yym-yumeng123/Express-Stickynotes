@@ -35,6 +35,6 @@ node express 搭建在线留言墙
 └── views  // 模板引擎
     ├── error.ejs
     ├── index.ejs
-    └── 
+    └──
 
 ```
