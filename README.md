@@ -32,6 +32,9 @@ app -- 不同页面的入口
             └── index.js
          ├── lib
          └── mod   //模块组件
+             ├── toast.js  //提醒组件
+             ├── note.less
+             └── toast.less
 │   ├── less
 │       ├── index.less
          ├── note.less

@@ -1,6 +1,6 @@
 /**
  * Created by yym on 2017/11/24.
  */
-var index = require('../mod/b')
+var Toast = require('../mod/toast.js').Toast
 
-console.log(index)
+Toast('Hello')
