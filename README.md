@@ -25,9 +25,11 @@ app -- 不同页面的入口
 │   ├── css
 │       └── style.css
 ├── src
+│   ├── webpack.config.js
 │   ├── imgs
 │   ├── js
          ├── app
+            └── index.js
          ├── lib
          └── mod   //模块组件
 │   ├── less
