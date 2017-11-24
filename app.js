@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+// view engine setup 模板引擎
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -20,8 +20,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+//静态目录  public
 app.use(express.static(path.join(__dirname, 'public')));
 
+//路由router/index
 app.use('/', index);
 app.use('/users', users);
 
