@@ -22,16 +22,33 @@ router.get('/notes', function(req, res, next) {
   })
   
 });
-
+//增加创建
 router.post('/notes/add',function(req,res,next){
 	var note = req.body.note
-	console.log('add...',note)
+	Note.create({text:note}).then(function(note) {
+  		res.send({status:0})
+	}).catch(function(){
+		res.send({status:1,errMessage:'数据库出错'})
+	})
 })
+
+//修改,更新 update 或者 save
 router.post('/notes/edit',function(req,res,next){
-
+	Note.update({text: req.body.note},{where: {id: req.body.id}}).then(function(){
+		console.log(arguments)
+		res.send({status:0})
+	}).catch(function(){
+		res.send({status:1,errMessage:'数据库出错'})
+	})
 })
-router.post('/notes/delete',function (req,res,next) {
 
+//删除
+router.post('/notes/delete',function (req,res,next) {
+	Note.destroy({where:{id:req.body.id}}).then(function(){
+		res.send({status:0})
+	}).catch(function(){
+		res.send({status:1,errMessage:'数据库出错'})
+	})
 })
 
 module.exports = router;
