@@ -18,23 +18,25 @@ node express 搭建在线留言墙
 │   ├── webpack.config.js  // webpack配置
 │   ├── imgs
 │   ├── js
-         ├── app  // 不同页面的入口
-            └── index.js
-         ├── lib
-         └── mod   // 模块组件
-             ├── toast.js  // 提醒组件
-             ├── note.less
-             └── toast.less
+│         ├── app  // 不同页面的入口
+│            └── index.js
+│         ├── lib
+               └── jquery.min.js
+│         └── mod   // 模块组件
+│             ├── toast.js  // 提醒组件
+│             ├── note.js
+               ├── note-manager.js
+               ├── waterfall.js
+│             └── event.js
 │   ├── less
 │       ├── index.less
-         ├── note.less
-         └── toast.less
+│       ├── note.less
+│       └── toast.less
 ├── routes  // 路由
 │   ├── index.js
-│   └── users.js
+│   └── api.js
 └── views  // 模板引擎
     ├── error.ejs
-    ├── index.ejs
-    └──
+    └── index.ejs
 
 ```
