@@ -40,12 +40,6 @@ node express 搭建在线留言墙
     └── index.ejs
 
 ```
-
-
-# project-express-note
-
-
-
 ## 使用方法
 
 ```bash
