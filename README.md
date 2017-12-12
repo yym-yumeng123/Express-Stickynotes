@@ -15,7 +15,7 @@ npm start
 PORT=2233 node ./bin/www
 ```
 
-**文件结构**
+## 文件结构
 
 ```
 ├── app.js
