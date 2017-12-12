@@ -1,17 +1,36 @@
 # Express-Stickynotes
 node express 搭建在线留言墙
 
+## 使用方法
+
+```
+git bash
+# 克隆仓库
+git clone 
+# cd 到仓库目录后安装依赖
+npm i
+# 启动本地服务器，打开 http://localhost:3000
+npm start
+# 当然你也可以指定端口( 比如开一个2233娘端口 )
+PORT=2233 node ./bin/www
+```
+
 **文件结构**
 
 ```
 ├── app.js
 ├── bin  // 一些可执行文件
 │   └── www
+├── database  // 数据存储
+│   └── database.sqlite
+├── model  //sequelize写数据库
+│   └── note.js
 ├── package.json
 ├── public  // 静态资源 源代码
 │   ├── imgs
 │   ├── js
-│    ├── fonts
+│	    └── index.js 编译后的js文件
+│   ├── fonts
 │   ├── css
 │       └── style.css
 ├── src  // 静态资源的源文件
@@ -25,8 +44,8 @@ node express 搭建在线留言墙
 │         └── mod   // 模块组件
 │             ├── toast.js  // 提醒组件
 │             ├── note.js
-               ├── note-manager.js
-               ├── waterfall.js
+              ├── note-manager.js
+              ├── waterfall.js
 │             └── event.js
 │   ├── less
 │       ├── index.less
@@ -39,18 +58,6 @@ node express 搭建在线留言墙
     ├── error.ejs
     └── index.ejs
 
-```
-## 使用方法
-
-```bash
-# 克隆仓库
-git clone 
-# cd 到仓库目录后安装依赖
-npm i
-# 启动本地服务器，打开 http://localhost:3000
-npm start
-# 当然你也可以指定端口( 比如开一个2233娘端口 )
-PORT=2233 node ./bin/www
 ```
 
 ## 目前完成功能如下：
