@@ -5,6 +5,7 @@ node express 搭建在线留言墙
 
 ```
 git bash
+
 # 克隆仓库
 git clone 
 # cd 到仓库目录后安装依赖
@@ -40,12 +41,12 @@ PORT=2233 node ./bin/www
 │         ├── app  // 不同页面的入口
 │            └── index.js
 │         ├── lib
-               └── jquery.min.js
+│               └── jquery.min.js
 │         └── mod   // 模块组件
 │             ├── toast.js  // 提醒组件
 │             ├── note.js
-              ├── note-manager.js
-              ├── waterfall.js
+│              ├── note-manager.js
+│              ├── waterfall.js
 │             └── event.js
 │   ├── less
 │       ├── index.less
@@ -61,8 +62,6 @@ PORT=2233 node ./bin/www
 ```
 
 ## 目前完成功能如下：
-
-( 仅供参考学习 )
 
 1. 完成 `Toast` 模块，发送消息提示
 2. 完成 `Note` 模块，增删改
@@ -84,7 +83,7 @@ PORT=2233 node ./bin/www
 
 **前端：**
 1. webpack 前端模块打包
-2. SCSS 样式预处理器
+2. Less 样式预处理器
 3. npm 包管理
 4. 模块化发开
 5. JS 组件封装
@@ -100,6 +99,11 @@ PORT=2233 node ./bin/www
 6. passport + github-passport
 7. pm2
 8. linux
+
+## 遇到的问题
+1. 在学习expres中对路由和中间件理解比较慢
+2. 组件的书写不是很流畅
+
 
 ## 其他
 1. bug 提交或其他问题，移步 [ issue ](../../issues)
