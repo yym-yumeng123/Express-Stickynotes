@@ -100,9 +100,23 @@ PORT=2233 node ./bin/www
 7. pm2
 8. linux
 
+## 路由约定
+```
+/*
+* 路由设置 和后台约定接口
+
+ 1. 获取所有的notes : /api/notes GET  数据req:{}  响应:res:{status:0,data:[{},{}]}  {status:1,errorMsg:'失败的'原因} 
+ 2. 创建一个note: POST /api/notes/add  数据req{note: 'Hello'}  响应res :{status:0} 
+ 3. 修改一个note: POST /api/notes/edit  数据req{note: "new note", id:"100}  
+ 4. 删除一个note: POST /api/notes/delete  数据 req{id:100} 
+* 
+* */
+```
+
 ## 遇到的问题
 1. 在学习expres中对路由和中间件理解比较慢
 2. 组件的书写不是很流畅
+3. 数据库看文档
 
 
 ## 其他

@@ -40,7 +40,6 @@ toast.prototype = {
 function Toast(message, time){
     return new toast(message, time);
 }
-
 //暴露接口
 window.Toast = Toast
 module.exports.Toast = Toast;
