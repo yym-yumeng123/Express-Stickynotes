@@ -15,17 +15,30 @@ var Note = require('../model/note.js').Note
 
 /* GET users listing. */
 router.get('/notes', function(req, res, next) {
-  
-  Note.findAll({raw:true}).then(function(notes){
-  	console.log(notes)
-  	res.send({status:0,data:notes})
-  })
+	// 把所有的note都展示	
+	var query = {raw:true}
+	if(req.session.user){
+		query.where = {
+			uid: req.session.user.id
+		}
+	}
+	Note.findAll(query).then(function(notes){  // query 所有的note
+	console.log(notes)
+	res.send({status:0,data:notes})
+	}).catch(function(){
+		res.send({status:1,errMessage:'数据库出错'})
+	})
   
 });
 //增加创建
 router.post('/notes/add',function(req,res,next){
+	//判断用户是否登录,没登录,请登录
+	if(!req.session.user){
+		return res.send({status: 1,errorMsg: "请您先登录"})
+	}
+	var uid = req.session.user.id  // 个人id
 	var note = req.body.note
-	Note.create({text:note}).then(function(note) {
+	Note.create({text: note,uid: uid}).then(function(note) {
   		res.send({status:0})
 	}).catch(function(){
 		res.send({status:1,errMessage:'数据库出错'})
@@ -34,7 +47,12 @@ router.post('/notes/add',function(req,res,next){
 
 //修改,更新 update 或者 save
 router.post('/notes/edit',function(req,res,next){
-	Note.update({text: req.body.note},{where: {id: req.body.id}}).then(function(){
+	//判断用户是否登录,没登录,请登录
+	if(!req.session.user){
+		return res.send({status: 1,errorMsg: "请您先登录"})
+	}
+	var uid = req.session.user.id  // 个人id
+	Note.update({text: req.body.note},{where: {id: req.body.id,uid: uid}}).then(function(){
 		console.log(arguments)
 		res.send({status:0})
 	}).catch(function(){
@@ -44,7 +62,12 @@ router.post('/notes/edit',function(req,res,next){
 
 //删除
 router.post('/notes/delete',function (req,res,next) {
-	Note.destroy({where:{id:req.body.id}}).then(function(){
+	//判断用户是否登录,没登录,请登录
+	if(!req.session.user){
+		return res.send({status: 1,errorMsg: "请您先登录"})
+	}
+	var uid = req.session.user.id  // 个人id
+	Note.destroy({where:{id:req.body.id,uid: uid}}).then(function(){
 		res.send({status:0})
 	}).catch(function(){
 		res.send({status:1,errMessage:'数据库出错'})

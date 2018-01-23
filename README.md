@@ -8,10 +8,13 @@ git bash
 
 # 克隆仓库
 git clone 
+
 # cd 到仓库目录后安装依赖
 npm i
+
 # 启动本地服务器，打开 http://localhost:3000
 npm start
+
 # 当然你也可以指定端口( 比如开一个2233娘端口 )
 PORT=2233 node ./bin/www
 ```
@@ -26,7 +29,6 @@ PORT=2233 node ./bin/www
 │   └── database.sqlite
 ├── model  //sequelize写数据库
 │   └── note.js
-├── package.json
 ├── public  // 静态资源 源代码
 │   ├── imgs
 │   ├── js
@@ -54,10 +56,14 @@ PORT=2233 node ./bin/www
 │       └── toast.less
 ├── routes  // 路由
 │   ├── index.js
+│   ├── api.js
 │   └── api.js
 └── views  // 模板引擎
-    ├── error.ejs
-    └── index.ejs
+│   ├── error.ejs
+│   └── index.ejs
+├── package.json
+├── package.lock.json
+├── .gitignore
 
 ```
 
@@ -82,25 +88,25 @@ PORT=2233 node ./bin/www
 ## 用到的技术栈
 
 **前端：**
-1. webpack 前端模块打包
-2. Less 样式预处理器
-3. npm 包管理
+1. webpack 前端模块打包,实现了代码的模块化
+2. Less 样式预处理器来写css
+3. npm scrpt 包管理 启动执行更加方便
 4. 模块化发开
 5. JS 组件封装
 6. pub / sub 设计模式
 7. 前后端联调
 
 **后端：**
-1. express ( based on Node.js ) 路由 中间件
+1. express ( based on Node.js ) 路由 中间件 模型
 2. MVC 分离
 3. sequelize + sqlite3 数据库
 4. ejs 模板引擎
-5. session
+5. 了解了cookie session的区别
 6. passport + github-passport
 7. pm2
 8. linux
 
-## 路由约定
+## 前后端路由约定
 ```
 /*
 * 路由设置 和后台约定接口
@@ -114,9 +120,10 @@ PORT=2233 node ./bin/www
 ```
 
 ## 遇到的问题
-1. 在学习expres中对路由和中间件理解比较慢
+1. 在学习expres中对路由和中间件理解总是比较不太懂,多看多尝试
 2. 组件的书写不是很流畅
 3. 数据库看文档
+
 
 
 ## 其他

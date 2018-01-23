@@ -35,10 +35,14 @@ sequelize
 var Note = sequelize.define('note', {
   text: {   //数据库里的内容
     type: Sequelize.STRING
+  },
+  uid: {
+    // 用户的id 
+    type: Sequelize.STRING
   }
 });
 
-
+// Note.sync({force:true})
 // force: true 如果表已经存在，将会丢弃表
 
 /*
