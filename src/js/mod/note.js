@@ -8,7 +8,7 @@ require('less/note.less');
 
 var Toast = require('./toast.js').Toast;
 var Event = require('mod/event.js');
-
+var maxZindex = 0
 function Note(opts){
     this.initOpts(opts);
     this.createNote();
@@ -46,7 +46,11 @@ Note.prototype = {
         this.$note = $(tpl);
         this.$note.find('.note-ct').html(this.opts.context);
         this.opts.$ct.append(this.$note);
-        if(!this.id)  this.$note.css('bottom', '10px');  //新增放到右边
+        if(!this.id)  this.$note.css({
+                left: Math.floor(Math.random()*(window.innerWidth - 220)),
+                top: Math.floor(Math.random()*(window.innerHeight - 320)),
+                zIndex: maxZindex++
+        });  //新增放到右边
     },
 
     setStyle: function () {

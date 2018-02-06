@@ -623,7 +623,6 @@ toast.prototype = {
 function Toast(message, time){
     return new toast(message, time);
 }
-
 //暴露接口
 window.Toast = Toast
 module.exports.Toast = Toast;
@@ -703,7 +702,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  margin: 0;\n  height: 100%;\n}\nul,\nli {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\nbody {\n  font: 14px/1.4 'Arial';\n}\na {\n  text-decoration: none;\n  color: #fff;\n}\n#header {\n  height: 30px;\n  font-size: 12px;\n}\n#header a {\n  display: block;\n  font-size: 12px;\n  margin-top: 6px;\n}\n#header .user-area {\n  padding-right: 16px;\n  float: right;\n}\n#header .user-area li {\n  float: left;\n  margin-left: 5px;\n}\n#header .user-area li span {\n  color: #fff;\n  display: block;\n  margin-top: 6px;\n}\n#header .user-area img {\n  height: 18px;\n  margin-top: 5px;\n  border-radius: 50%;\n}\n#header .setting {\n  float: right;\n  margin-left: 9px;\n  display: none;\n}\n#header .add-note {\n  float: left;\n  margin-left: 16px;\n  border: 1px solid #fff;\n  border-radius: 4px;\n  padding: 2px 4px;\n}\n#header .login {\n  float: right;\n  margin-left: 16px;\n}\n#content {\n  position: relative;\n  height: -webkit-calc(70%);\n  height: calc(70%);\n}\n@keyframes move-twink-back {\n  from {\n    background-position: 0 0;\n  }\n  to {\n    background-position: -10000px 5000px;\n  }\n}\n.stars,\n.twinkling {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  height: 100%;\n  display: block;\n}\n.stars {\n  background: #000 url(http://7xpvnv.com2.z0.glb.qiniucdn.com/ba25c630-1c91-4ac1-a3de-65555d78c147.png) repeat top center;\n  z-index: -2;\n}\n.twinkling {\n  background: transparent url(http://7xpvnv.com2.z0.glb.qiniucdn.com/493b97e6-c499-4b41-a26b-8942873615b0.png) repeat top center;\n  z-index: -1;\n  animation: move-twink-back 200s linear infinite;\n}\n", ""]);
+exports.push([module.i, "html,\nbody {\n  margin: 0;\n  height: 100%;\n}\nul,\nli {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\nbody {\n  font: 14px/1.4 'Arial';\n}\na {\n  text-decoration: none;\n  color: #fff;\n}\n#header {\n  width: 100%;\n  height: 50px;\n  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);\n}\n#header a {\n  display: inline-block;\n  line-height: 50px;\n  color: #00d3aa;\n}\n#header a .icon-zengjia {\n  margin-left: 20px;\n  font-size: 25px;\n  line-height: 50px;\n}\n#header .user-area {\n  padding-right: 40px;\n  float: right;\n}\n#header .user-area li.log {\n  position: relative;\n  float: left;\n  margin-left: 5px;\n}\n#header .user-area li.log::before {\n  content: '';\n  display: block;\n  position: absolute;\n  z-index: -1;\n  right: -10px;\n  bottom: 5px;\n  left: -10px;\n  top: 5px;\n  border-radius: 30px;\n  background-color: #00d3aa;\n}\n#header .user-area li.log .icon-GitHub {\n  line-height: 50px;\n  font-size: 20px;\n  margin-right: 5px;\n  color: #fff;\n}\n#header .user-area li.show {\n  float: left;\n  margin-left: 5px;\n  line-height: 50px;\n  font-size: 20px;\n  font-family: \"Brush Script Std\";\n}\n#header .user-area li.show img {\n  width: 30px;\n  height: 30px;\n  margin-top: 10px;\n  border-radius: 50%;\n}\n#header .user-area li.show .icon-dengchu {\n  font-size: 20px;\n  font-weight: bold;\n  margin-right: 5px;\n}\n#header .setting {\n  float: right;\n  margin-left: 9px;\n  display: none;\n}\n#header .add-note {\n  float: left;\n  margin-left: 30px;\n  font-size: 20px;\n  font-weight: bold;\n  font-family: \"Brush Script Std\";\n}\n#header .login {\n  float: right;\n  color: #fff;\n}\n#content {\n  position: relative;\n  height: -webkit-calc(50%);\n  height: calc(50%);\n}\n", ""]);
 
 // exports
 
@@ -865,7 +864,7 @@ __webpack_require__(12);
 
 var Toast = __webpack_require__(4).Toast;
 var Event = __webpack_require__(3);
-
+var maxZindex = 0
 function Note(opts){
     this.initOpts(opts);
     this.createNote();
@@ -903,7 +902,11 @@ Note.prototype = {
         this.$note = $(tpl);
         this.$note.find('.note-ct').html(this.opts.context);
         this.opts.$ct.append(this.$note);
-        if(!this.id)  this.$note.css('bottom', '10px');  //新增放到右边
+        if(!this.id)  this.$note.css({
+                left: Math.floor(Math.random()*(window.innerWidth - 220)),
+                top: Math.floor(Math.random()*(window.innerHeight - 320)),
+                zIndex: maxZindex++
+        });  //新增放到右边
     },
 
     setStyle: function () {
@@ -981,7 +984,6 @@ Note.prototype = {
     },
 
     add: function (msg){
-        console.log('addd...');
         var self = this;
         $.post('/api/notes/add', {note: msg})
             .done(function(ret){
@@ -1056,7 +1058,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  transition: all 0.5s;\n}\n.note .note-head {\n  height: 20px;\n  background-color: #ea9b35;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: ' ';\n  display: block;\n  width: 64px;\n  height: 18px;\n  background: #35bba3;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -11px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .delete {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  font-size: 12px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: 0.8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
+exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  transition: all 0.5s;\n}\n.note .note-head {\n  height: 20px;\n  background-color: #ea9b35;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: ' ';\n  display: block;\n  width: 64px;\n  height: 18px;\n  background: #35bba3;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -11px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .time {\n  font-size: 13px;\n  text-align: right;\n  background-color: #efb04e;\n  padding: 5px;\n  margin-top: -10px;\n}\n.note .delete {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  font-size: 12px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: 0.8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
 
 // exports
 
@@ -1101,7 +1103,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, ".toast {\n  position: fixed;\n  left: 50%;\n  transform: translateX(-50%);\n  bottom: 20px;\n  color: #d15a39;\n  background: #fff;\n  padding: 5px 10px;\n  border-radius: 3px;\n  box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.6);\n  box-shadow: 0 0 3px 1px rgba(0, 255, 255, 0.6);\n  display: none;\n}\n", ""]);
+exports.push([module.i, ".toast {\n  width: 100px;\n  text-align: center;\n  font-weight: bold;\n  padding: 10px 20px;\n  position: fixed;\n  left: 50%;\n  transform: translateX(-50%);\n  bottom: 20px;\n  color: #00d3aa;\n  background: #fff;\n  border-radius: 30px;\n  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2);\n}\n", ""]);
 
 // exports
 
