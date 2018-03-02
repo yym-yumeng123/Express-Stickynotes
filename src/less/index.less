@@ -26,15 +26,15 @@ a {
     height: 50px;
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
 
+    .strickName {
+        display: inline-block;
+        line-height: 50px;
+        color: @color;
+    }
     a {
         display: inline-block;
         line-height: 50px;
         color: @color;
-        .icon-zengjia {
-            margin-left: 20px;
-            font-size: 25px;
-            line-height: 50px;
-        }
     }
     .user-area {
         padding-right: 40px;
@@ -81,17 +81,28 @@ a {
             }
         }
     }
+    .add-note {
+        position: absolute;
+        bottom: 30px;
+        right: 40px;
+        .icon-zengjia {
+            font-size: 40px;
+            color: @color;
+            
+        }
+    }
     .setting {
         float: right;
         margin-left: 9px;
         display: none;
     }
-    .add-note {
+    span.strickName {
         float: left;
         margin-left: 30px;
         font-size: 20px;
         font-weight: bold;
         font-family: "Brush Script Std";
+        cursor: pointer;
     }
     .login {
         float: right;
@@ -100,7 +111,6 @@ a {
 }
 #content {
     position: relative;
-    height: -webkit-calc(100% - 50px);
     height: calc(100% - 50px);
 }
 

@@ -1,0 +1,37 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'E:\\node\\node.exe',
+1 verbose cli   'E:\\node\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'watch' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.0
+4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+5 info lifecycle express-stickynotes@0.0.0~prewatch: express-stickynotes@0.0.0
+6 silly lifecycle express-stickynotes@0.0.0~prewatch: no script for prewatch, continuing
+7 info lifecycle express-stickynotes@0.0.0~watch: express-stickynotes@0.0.0
+8 verbose lifecycle express-stickynotes@0.0.0~watch: unsafe-perm in lifecycle true
+9 verbose lifecycle express-stickynotes@0.0.0~watch: PATH: E:\node\node_modules\npm\bin\node-gyp-bin;C:\Users\Administrator\Desktop\Express-Stickynotes\node_modules\.bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\iCLS Client\;C:\Program Files\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Windows7MasterC:\Program Files\D:\nodejs\node_global;E:\node\;E:\yarn\bin;D:\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;D:\VScode\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Yarn\bin
+10 verbose lifecycle express-stickynotes@0.0.0~watch: CWD: C:\Users\Administrator\Desktop\Express-Stickynotes
+11 silly lifecycle express-stickynotes@0.0.0~watch: Args: [ '/d /s /c',
+11 silly lifecycle   'onchange src/**/*.js src/**/*.less -- npm run webpack' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1018:11)
+12 verbose stack     at process.kill (internal/process.js:190:13)
+12 verbose stack     at process.listener (E:\node\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:91:20)
+12 verbose stack     at process.emit (events.js:185:7)
+12 verbose stack     at processEmit (E:\node\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (E:\node\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:217:44)
+13 verbose cwd C:\Users\Administrator\Desktop\Express-Stickynotes
+14 error Windows_NT 6.1.7601
+15 error argv "E:\\node\\node.exe" "E:\\node\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch"
+16 error node v6.11.0
+17 error npm  v3.10.10
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

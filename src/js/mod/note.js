@@ -47,8 +47,8 @@ Note.prototype = {
         this.$note.find('.note-ct').html(this.opts.context);
         this.opts.$ct.append(this.$note);
         if(!this.id)  this.$note.css({
-                left: Math.floor(Math.random()*(window.innerWidth - 220)),
-                top: Math.floor(Math.random()*(window.innerHeight - 320)),
+                left: Math.floor(Math.random()*(window.innerWidth - 160)),
+                top: Math.floor(Math.random()*(window.innerHeight - 100)),
                 zIndex: maxZindex++
         });  //新增放到右边
     },

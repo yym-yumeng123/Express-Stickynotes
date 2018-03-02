@@ -9,10 +9,11 @@
   </head>
   <body>
     <div id="header">
-      <a class="add-note" title="添加笔记" href="#">YYM StickyNotes <i class="iconfont icon-zengjia"></i></a>
+      <span class="strickName">YYM StickyNotes</span>
+      <a class="add-note" title="添加笔记" href="#"> <i class="iconfont icon-zengjia"></i></a>
       <ul class="user-area">
        <% if (isLogin){ %>
-          <li class="show"><span title="<%= user.username %>"><%= user.username %></span></li>
+          <!-- <li class="show"><span title="<%= user.username %>"><%= user.username %></span></li> -->
           <li class="show"><img src="<%= user.avatar %>" alt=""></li>
           <li class="show"><span class="line"> | </span> </li>
           <li class="show"><a class="logout" href="/auth/logout"><i class="iconfont icon-dengchu"></i>登出</a></li>
