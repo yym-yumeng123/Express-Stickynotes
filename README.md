@@ -3,7 +3,7 @@ node express 搭建在线留言墙
 
 ![](https://i.loli.net/2018/03/02/5a9915ec07496.png)
 
-[在线预览](yangyumeng.club)
+在线预览: http://yangyumeng.club
 
 ## 使用方法
 
